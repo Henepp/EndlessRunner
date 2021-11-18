@@ -9,7 +9,10 @@ public class AudioManager : MonoBehaviour
     public AudioSource Audiosource;
 
     public AudioClip Whoosh;
+    public AudioClip CheckPoint;
+
     public bool Isplaying;
+    public bool Isplaying1;
     public bool HitAgain = true;
 
     private void Awake()
@@ -25,18 +28,26 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayWhooshSoundEffect()
+    public void StartWhoosh()
     {
-        //stops it from playing multiple times
-        if (Isplaying) return;
+        StartCoroutine(PlayWhooshSoundEffect());
+    }
 
-        /*if (HitAgain)
-        {
-            Audiosource.Stop();
-            Audiosource.PlayOneShot(Whoosh);
-        }*/
+
+    IEnumerator PlayWhooshSoundEffect()
+    {
+        if (Isplaying) yield return 0;
+
 
         Isplaying = true;
+
+        //plays the sound effect
         Audiosource.PlayOneShot(Whoosh);
+
+        //waits 2 seconds
+        yield return new WaitForSeconds(2);
+
+        //sets bool to false so you can play the sound effect again
+        Isplaying = false;
     }
 }

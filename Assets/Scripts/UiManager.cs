@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 public class UiManager : MonoBehaviour
@@ -46,21 +43,5 @@ public class UiManager : MonoBehaviour
     public void AddTimeToTimer()
     {
         uiTimer += 30f;
-    }
-
-    /// <summary>
-    /// function to load the begin scene
-    /// </summary>
-    public void StartGame()
-    {
-        SceneManager.LoadScene(1);
-    }
-
-    /// <summary>
-    /// function to quit the game
-    /// </summary>
-    public void Exit()
-    {
-        Application.Quit();
     }
 }

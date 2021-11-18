@@ -29,4 +29,4 @@ public class CheckPoint : MonoBehaviour
             UiManager.instance.AddTimeToTimer();
         }
     }
-}
+    }
