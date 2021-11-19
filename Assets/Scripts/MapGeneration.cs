@@ -19,7 +19,7 @@ public class MapGeneration : MonoBehaviour
     {
         Vector3 _pos = new Vector3(0, 0, 0);
 
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < 2; i++)
         {
             //gets a random number to spawn a different platform
             int _platformNumber = Random.Range(0, Platforms.Length);
