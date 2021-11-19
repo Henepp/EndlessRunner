@@ -17,8 +17,8 @@ public class CheckPoint : MonoBehaviour
     private void Update()
     {
         //up and down
-        float newY = Mathf.Sin(Time.time * speed) * height + pos.y;
-        transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+        float _newY = Mathf.Sin(Time.time * speed) * height + pos.y;
+        transform.position = new Vector3(transform.position.x, _newY, transform.position.z);
     }
 
     private void OnTriggerEnter(Collider other)
