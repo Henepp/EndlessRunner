@@ -25,7 +25,6 @@ public class CheckPoint : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("trigger working");
             UiManager.instance.AddTimeToTimer();
         }
     }

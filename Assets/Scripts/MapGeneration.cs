@@ -4,10 +4,26 @@ using UnityEngine;
 
 public class MapGeneration : MonoBehaviour
 {
+    public static MapGeneration instance;
+
     [SerializeField] private GameObject mapHolder;
 
     public GameObject[] Platforms;
+    public int OffsetZ;
 
+    private void Awake()
+    {
+        //singleton
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+
+    }
 
     void Start()
     {
@@ -31,7 +47,7 @@ public class MapGeneration : MonoBehaviour
             _go.transform.SetParent(mapHolder.transform);
 
             //sets the offset every time it loops trough the forloop
-            _pos.z += 10;
+            _pos.z += OffsetZ;
         }
     }
 }
